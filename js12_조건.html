@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+    <style>
+    body{
+        margin:0;
+    }
+    .top-nav {
+        left: 100%;
+        background: navajowhite;
+        display:flex;
+        justify-content: space-between;
+    }
+
+    .flex {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .down-nav {
+        background: black;
+        color: white;
+        justify-content: space-between;
+        display:flex;
+        padding:10px;
+        height:0;
+        visibility: hidden;
+        z-index: 5;
+    }
+    .top-nav li{
+        display:inline-block;
+        padding:10px;
+    }
+    </style>
+</head>
+<body>
+    <!--네비게이션 : 로고 -->
+    <div class="top-nav">
+        <h2 id="top-logo">로고</h2>
+        <ul class="flex">
+            <li>커피</li>
+            <li>라떼</li>
+            <li>주스</li>
+            <li>티</li>
+        </ul>
+
+    </div>
+    <div class="down-nav" id="down-nav">
+        <div>
+            <h3>커피</h3>
+            <ul>
+                <ul>아메리카노</ul>
+                <ul>콜드브루</ul>
+            </ul>
+            </div>
+            <div>
+            <h3>라떼</h3>
+            <ul>
+                <ul>카페라떼</ul>
+                <ul>콜드브루라떼</ul>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        var down_nav_flag = 0
+        document.getElementById('top-logo').addEventListener('click',function(){
+            if(down_nav_flag === 0){
+                down_nav_flag = 1
+                document.getElementById('down-nav').style.height='auto'
+                document.getElementById('down-nav').style.visibility = 'visible'
+            }
+            else if(down_nav_flag === 1){
+                down_nav_flag = 0
+                document.getElementById('down-nav').style.hegiht='0'
+                document.getElementById('down-nav').style.visibility = 'hidden'
+            }
+        })
+
+    </script>
+</body>
+</html>
